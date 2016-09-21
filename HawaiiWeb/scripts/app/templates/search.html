@@ -1,0 +1,24 @@
+﻿<div class="form-group has-feedback">
+    <input type="search" class="form-control input-lg" placeholder="Search" id="searchInput" />
+    <i class="glyphicon glyphicon-search form-control-feedback"></i>
+</div>
+<div class="row">
+    <div class="col-sm-3 col-sm-offset-6">
+        <div class="input-group">
+            <select id="filterByRoom" class="form-control input-sm search-filter">
+                <%_.each(['',1,2,3,4,5], function(n){ %>
+                <option value="<%- n %>"><%- n%></option>
+                <% }); %>
+            </select>
+            <span class="input-group-addon">rooms</span>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="input-group">
+            <span class="input-group-addon">$</span>
+            <input type="number" min="0" id="filterByPriceMin" class="form-control input-sm search-filter" />
+            <span class="input-group-addon">-</span>
+            <input type="number" min="0" id="filterByPriceMax" class="form-control input-sm search-filter" />
+        </div>
+    </div>
+</div>

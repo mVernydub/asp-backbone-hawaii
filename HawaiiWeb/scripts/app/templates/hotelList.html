@@ -1,0 +1,22 @@
+﻿<% if (model.length) { %>
+    <%_.each(model, function(hotel){ %>
+        <div class="panel">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <h2 ><%- hotel.Name %> <small><%- hotel.Price %>$</small></h2>               
+                        <p><%- hotel.ShortDescription%></p>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <button data-id="<%- hotel.Id %>" class="btn btn-sm btn-block btn-default btn-hotel-details pull-right">More</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <img class="img-rounded img-small" src="<%- hotel.ImgUrl %>" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    <% }); %>
+<% } %>

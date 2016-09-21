@@ -1,0 +1,28 @@
+﻿<div class="panel">
+    <div class="panel-heading">
+        <h1 >
+            <%- model.Name %>
+        </h1>
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-12">
+                <img class="img-thumbnail" src="<%= model.ImgUrl %>" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <% _.times(model.Stars, function(){ %>
+                            <span class="glyphicon glyphicon-star"></span>
+                        <% }); %>                            
+                    </li>
+                    <li class="list-group-item"><%- model.RoomsCount%> rooms</li>
+                    <li class="list-group-item"><%- model.Price %>$ for a day</li>
+                </ul>
+                <div class="well well-sm"><%- model.Description %></div>
+            </div>
+        </div>
+    </div>
+</div>
