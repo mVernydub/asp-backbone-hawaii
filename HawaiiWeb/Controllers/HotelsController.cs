@@ -14,7 +14,7 @@ namespace HawaiiWeb.Controllers
         {
             this.dataService = new HotelDataService() ;
         }
-        public HotelsController(HotelDataService hotelsService )
+        public HotelsController(HotelDataService hotelsService)
         {
            this.dataService = hotelsService;
         }

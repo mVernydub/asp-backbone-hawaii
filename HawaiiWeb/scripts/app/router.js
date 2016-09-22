@@ -1,14 +1,16 @@
 ﻿define([
     'underscore',
     'backbone',
-    'views/SearchView'
-], function (_, Backbone, SearchView) {
+    'views/SearchView',
+    'collections/hotels'
+], function (_, Backbone, SearchView, HotelsCollection) {
     var AppRouter = Backbone.Router.extend({
         routes: {
             '*path':'defaultRoute'
         },
         defaultRoute: function () {
-            var searchView = new SearchView({});
+            var mainCollection = new HotelsCollection();
+            var searchView = new SearchView({ collection: mainCollection });
             searchView.render();
           }
     });

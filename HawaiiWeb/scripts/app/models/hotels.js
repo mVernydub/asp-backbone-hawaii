@@ -11,7 +11,7 @@
             ShortDescription: '',
             Description: '',
             ImgUrl: '',
-            RoomsCount: ''
+            RoomsCount: 0
         }
         ,idAttribute:'Id'
     });

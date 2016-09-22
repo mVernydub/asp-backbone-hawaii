@@ -118,6 +118,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Images\hotel.jpg" />
+    <Content Include="scripts\app\collections\filtered.js" />
+    <Content Include="scripts\app\models\filterSettings.js" />
     <Content Include="scripts\app\templates\hotelDetailed.html" />
     <Content Include="scripts\app\templates\hotelList.html" />
     <Content Include="scripts\app\templates\search.html" />

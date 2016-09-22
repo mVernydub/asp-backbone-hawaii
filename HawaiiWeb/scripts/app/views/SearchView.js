@@ -3,21 +3,15 @@
     'underscore',
     'backbone',
     'text!templates/search.html',
-    'views/HotelsListView',
-    'collections/hotels'
-], function ($, _, Backbone, templateHtml,  HotelsListView, HotelsCollection) {
+    'views/HotelsListView'
+], function ($, _, Backbone, templateHtml, HotelsListView) {
     var SearchView = Backbone.View.extend({
         el: $('#searchContainer'),
         initialize: function () {
-           
-            //where is best place to put it???
-            this.searchCollection = new HotelsCollection();
-            this.hotelsListView = new HotelsListView({ collection: this.searchCollection.filtered });
+            this.hotelsListView = new HotelsListView({ collection: this.collection.filtered });
             this.hotelsListView.render();
-
         },
         render: function () {
-
             var template = _.template(templateHtml);
             this.$el.html(template);
             return this;
@@ -36,13 +30,10 @@
         searchTextChanged: function (args) {
             var keyWord = $('#searchInput').val().trim();
             //if (keyWord.length > 2) keyWord = '';
-            this.searchCollection.trigger('search', {
-                keyWord: keyWord,
-                filters: this.collectFilters()
-            });
+            this.collection.trigger('search', { keyWord: keyWord });
         },
         filter: function (args) {
-            this.searchCollection.trigger('filter', this.collectFilters());
+            this.collection.trigger('filter', this.collectFilters());
         }
     });
     return SearchView;
